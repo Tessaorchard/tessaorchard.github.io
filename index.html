@@ -1,13 +1,1039 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tessa Orchard | Romance Author</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Official website of Tessa Orchard, author of the Whitebark Valley small-town romance series." />
+  <meta name="theme-color" content="#7a3f2a" />
+  <title>Tessa Orchard | Small-Town Romance Author</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+    :root {
+      --cream: #fbf5ea;
+      --cream-2: #f4e6d1;
+      --paper: #fffaf2;
+      --paper-warm: #fbf0df;
+      --rust: #a35335;
+      --rust-deep: #6f3524;
+      --cider: #c77a43;
+      --gold: #bd945d;
+      --sage: #77806b;
+      --sage-dark: #5e6754;
+      --brown: #4e392f;
+      --ink: #352823;
+      --muted: #76655c;
+      --line: rgba(78,57,47,.14);
+      --shadow: 0 18px 50px rgba(78,57,47,.14);
+      --shadow-lg: 0 28px 80px rgba(78,57,47,.19);
+      --radius: 24px;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 8% 8%, rgba(199,122,67,.11), transparent 28%),
+        radial-gradient(circle at 92% 18%, rgba(119,128,107,.09), transparent 30%),
+        linear-gradient(180deg, #fffaf3 0%, var(--cream) 55%, #f7efe4 100%);
+      font-family: "DM Sans", Arial, sans-serif;
+      line-height: 1.65;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: .26;
+      background-image:
+        radial-gradient(circle at 20% 30%, rgba(111,53,36,.05) 0 1px, transparent 1.2px),
+        radial-gradient(circle at 70% 60%, rgba(111,53,36,.035) 0 1px, transparent 1.2px);
+      background-size: 22px 22px, 28px 28px;
+      z-index: -1;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: min(calc(100% - 32px), var(--max));
+      margin-inline: auto;
+    }
+
+    .eyebrow {
+      margin: 0 0 10px;
+      color: var(--rust);
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3 {
+      font-family: "Playfair Display", Georgia, serif;
+      margin-top: 0;
+      color: var(--brown);
+      line-height: 1.07;
+    }
+
+    h1 {
+      font-size: clamp(3.4rem, 8vw, 6.8rem);
+      letter-spacing: -.045em;
+      margin-bottom: 18px;
+    }
+
+    h2 {
+      font-size: clamp(2.35rem, 5vw, 4.2rem);
+      letter-spacing: -.035em;
+    }
+
+    h3 {
+      font-size: clamp(1.4rem, 2.4vw, 1.95rem);
+    }
+
+    p {
+      margin-top: 0;
+      color: var(--muted);
+      font-size: 1.03rem;
+    }
+
+    .section-heading {
+      max-width: 760px;
+      margin-bottom: 40px;
+    }
+
+    .ornament {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--cider);
+      margin: 12px 0 20px;
+      font-size: .95rem;
+    }
+
+    .ornament::before,
+    .ornament::after {
+      content: "";
+      height: 1px;
+      width: 70px;
+      background: linear-gradient(90deg, transparent, rgba(163,83,53,.45));
+    }
+
+    .ornament::after {
+      background: linear-gradient(90deg, rgba(163,83,53,.45), transparent);
+    }
+
+    .btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 26px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 13px 22px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-weight: 800;
+      font-size: .9rem;
+      transition: transform .18s ease, box-shadow .18s ease, filter .18s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.02);
+    }
+
+    .btn-primary {
+      color: #fffaf3;
+      background: linear-gradient(135deg, var(--rust), var(--rust-deep));
+      box-shadow: 0 10px 24px rgba(111,53,36,.22);
+    }
+
+    .btn-secondary {
+      color: var(--rust-deep);
+      background: rgba(255,250,243,.78);
+      border-color: rgba(111,53,36,.16);
+      box-shadow: 0 8px 18px rgba(78,57,47,.06);
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(14px);
+      background: rgba(251,245,234,.9);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: inline-flex;
+      flex-direction: column;
+      line-height: 1;
+    }
+
+    .brand strong {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 1.5rem;
+      color: var(--brown);
+      letter-spacing: -.02em;
+    }
+
+    .brand span {
+      margin-top: 5px;
+      color: var(--rust);
+      font-size: .66rem;
+      font-weight: 800;
+      letter-spacing: .17em;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      font-size: .88rem;
+      font-weight: 700;
+      color: #624f45;
+    }
+
+    .menu-button {
+      display: none;
+      border: 0;
+      background: transparent;
+      color: var(--brown);
+      font-size: 1.6rem;
+      cursor: pointer;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 96px 0 90px;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: auto 0 0 0;
+      height: 150px;
+      background:
+        linear-gradient(to top, rgba(119,128,107,.16), transparent 70%),
+        repeating-linear-gradient(90deg,
+          transparent 0 54px,
+          rgba(78,57,47,.08) 54px 56px);
+      clip-path: polygon(0 62%, 7% 55%, 12% 66%, 19% 49%, 27% 64%, 35% 45%, 43% 60%, 52% 42%, 62% 59%, 73% 46%, 82% 61%, 92% 44%, 100% 58%, 100% 100%, 0 100%);
+      opacity: .7;
+    }
+
+    .hero::after {
+      content: "🍁";
+      position: absolute;
+      right: 7%;
+      top: 14%;
+      font-size: 7rem;
+      opacity: .08;
+      transform: rotate(14deg);
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(320px, .85fr);
+      gap: 60px;
+      align-items: center;
+    }
+
+    .hero-copy {
+      position: relative;
+    }
+
+    .hero-copy::before {
+      content: "✦";
+      position: absolute;
+      left: -28px;
+      top: -10px;
+      color: var(--gold);
+      opacity: .7;
+    }
+
+    .hero-copy .lead {
+      max-width: 690px;
+      font-size: clamp(1.15rem, 2vw, 1.34rem);
+      color: #6b574d;
+    }
+
+    .hero-note {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin-top: 18px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(199,122,67,.10);
+      color: var(--rust-deep);
+      font-size: .82rem;
+      font-weight: 700;
+      border: 1px solid rgba(163,83,53,.08);
+    }
+
+    .hero-card-wrap {
+      position: relative;
+    }
+
+    .hero-card-wrap::before {
+      content: "";
+      position: absolute;
+      inset: 24px -20px -18px 24px;
+      border-radius: 30px;
+      background: rgba(119,128,107,.16);
+      transform: rotate(3deg);
+    }
+
+    .hero-card {
+      position: relative;
+      min-height: 500px;
+      padding: 26px;
+      border-radius: 30px;
+      background:
+        linear-gradient(150deg, rgba(255,255,255,.76), rgba(243,230,210,.92)),
+        repeating-linear-gradient(45deg, rgba(163,83,53,.025) 0 8px, transparent 8px 16px);
+      border: 1px solid rgba(111,53,36,.12);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .book-mockup {
+      height: 100%;
+      min-height: 446px;
+      padding: 36px;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      color: #fffaf3;
+      background:
+        linear-gradient(rgba(68,39,29,.22), rgba(68,39,29,.38)),
+        radial-gradient(circle at 50% 20%, rgba(255,221,166,.24), transparent 28%),
+        linear-gradient(150deg, #7b4331 0%, #b8683a 48%, #656d59 100%);
+      border: 9px solid rgba(255,250,243,.95);
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.18), 0 18px 38px rgba(79,61,51,.24);
+    }
+
+    .book-mockup small {
+      display: block;
+      margin-bottom: 18px;
+      font-weight: 800;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      opacity: .94;
+    }
+
+    .book-mockup .title {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(2.5rem, 5vw, 3.8rem);
+      line-height: .97;
+      font-weight: 700;
+      text-shadow: 0 3px 16px rgba(0,0,0,.18);
+    }
+
+    .book-mockup .author {
+      margin-top: 28px;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    section {
+      position: relative;
+      padding: 84px 0;
+    }
+
+    .book-feature {
+      display: grid;
+      grid-template-columns: minmax(280px, .72fr) minmax(0, 1.28fr);
+      gap: 58px;
+      align-items: center;
+    }
+
+    .cover-slot {
+      position: relative;
+      border-radius: 28px;
+      padding: 18px;
+      background: linear-gradient(145deg, #ecd8bf, #f6ead8);
+      box-shadow: var(--shadow-lg);
+      border: 1px solid rgba(78,57,47,.08);
+    }
+
+    .cover-slot::after {
+      content: "";
+      position: absolute;
+      inset: 12px -14px -14px 18px;
+      border-radius: 28px;
+      background: rgba(199,122,67,.10);
+      z-index: -1;
+      transform: rotate(2deg);
+    }
+
+    .cover-placeholder {
+      aspect-ratio: 2 / 3;
+      border-radius: 17px;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 28px;
+      color: #fffaf3;
+      background:
+        linear-gradient(rgba(71,47,37,.14), rgba(71,47,37,.30)),
+        radial-gradient(circle at 50% 18%, rgba(255,226,181,.22), transparent 26%),
+        linear-gradient(160deg, #7f4330, #bc7845 58%, #717962);
+      border: 6px solid rgba(255,250,243,.94);
+    }
+
+    .cover-placeholder span {
+      max-width: 18ch;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 1.9rem;
+      line-height: 1.05;
+      font-weight: 700;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin: 22px 0 24px;
+    }
+
+    .tag {
+      padding: 8px 12px;
+      border-radius: 999px;
+      color: var(--rust-deep);
+      background: rgba(163,83,53,.08);
+      border: 1px solid rgba(163,83,53,.10);
+      font-size: .78rem;
+      font-weight: 800;
+    }
+
+    .town {
+      overflow: hidden;
+      background:
+        linear-gradient(180deg, rgba(119,128,107,.08), rgba(119,128,107,.02)),
+        var(--paper);
+      border-block: 1px solid var(--line);
+    }
+
+    .town::before,
+    .town::after {
+      content: "🍂";
+      position: absolute;
+      font-size: 7rem;
+      opacity: .055;
+    }
+
+    .town::before { left: 2%; top: 8%; transform: rotate(-18deg); }
+    .town::after { right: 3%; bottom: 8%; transform: rotate(16deg); }
+
+    .town-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .place-card {
+      position: relative;
+      overflow: hidden;
+      min-height: 260px;
+      padding: 28px;
+      border-radius: var(--radius);
+      background:
+        linear-gradient(180deg, rgba(255,250,243,.96), rgba(251,240,223,.86));
+      border: 1px solid var(--line);
+      box-shadow: 0 14px 32px rgba(79,61,51,.08);
+      transition: transform .18s ease, box-shadow .18s ease;
+    }
+
+    .place-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 38px rgba(79,61,51,.12);
+    }
+
+    .place-card::after {
+      content: "";
+      position: absolute;
+      right: -30px;
+      bottom: -30px;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: rgba(199,122,67,.07);
+    }
+
+    .place-card .icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 22px;
+      font-size: 1.8rem;
+      background: rgba(199,122,67,.10);
+      border: 1px solid rgba(163,83,53,.08);
+    }
+
+    .series-strip {
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 32px;
+      align-items: center;
+      padding: 42px;
+      border-radius: 30px;
+      color: #fffaf3;
+      background:
+        radial-gradient(circle at 92% 18%, rgba(255,255,255,.12), transparent 26%),
+        linear-gradient(135deg, #6f3524, #5e4539 62%, #636b58);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .series-strip::after {
+      content: "Whitebark Valley";
+      position: absolute;
+      right: -20px;
+      bottom: -24px;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 4.5rem;
+      color: rgba(255,255,255,.045);
+      white-space: nowrap;
+    }
+
+    .series-strip h2,
+    .series-strip p,
+    .series-strip .eyebrow {
+      color: #fffaf3;
+      position: relative;
+      z-index: 1;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(280px, .72fr);
+      gap: 56px;
+      align-items: center;
+    }
+
+    .author-card {
+      position: relative;
+      overflow: hidden;
+      min-height: 390px;
+      border-radius: 30px;
+      padding: 34px;
+      display: flex;
+      align-items: flex-end;
+      background:
+        linear-gradient(180deg, transparent 20%, rgba(78,52,40,.48) 100%),
+        radial-gradient(circle at 30% 25%, #d9b68c, transparent 36%),
+        linear-gradient(145deg, #ad7455, #69705e);
+      color: #fffaf3;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .author-card::before {
+      content: "T";
+      position: absolute;
+      top: 16px;
+      right: 28px;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 9rem;
+      color: rgba(255,255,255,.12);
+    }
+
+    .author-card p {
+      position: relative;
+      z-index: 1;
+      margin: 0;
+      color: #fffaf3;
+      font-weight: 700;
+    }
+
+    .newsletter {
+      position: relative;
+      overflow: hidden;
+      padding: 52px 44px;
+      border-radius: 32px;
+      text-align: center;
+      background:
+        linear-gradient(rgba(255,250,243,.94), rgba(255,250,243,.94)),
+        repeating-linear-gradient(45deg, rgba(155,79,50,.06) 0 10px, transparent 10px 20px);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .newsletter::before {
+      content: "✦";
+      position: absolute;
+      left: 28px;
+      top: 22px;
+      color: var(--gold);
+      font-size: 2rem;
+      opacity: .45;
+    }
+
+    .newsletter::after {
+      content: "🍁";
+      position: absolute;
+      right: 28px;
+      bottom: 18px;
+      font-size: 4rem;
+      opacity: .06;
+      transform: rotate(20deg);
+    }
+
+    .newsletter p {
+      max-width: 640px;
+      margin-inline: auto;
+    }
+
+    .newsletter-note {
+      margin-top: 14px;
+      font-size: .78rem;
+      color: #8a776d;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+    }
+
+    .contact-card {
+      min-height: 180px;
+      padding: 30px;
+      border-radius: var(--radius);
+      background:
+        linear-gradient(180deg, rgba(255,250,243,.9), rgba(247,235,218,.74));
+      border: 1px solid var(--line);
+      box-shadow: 0 12px 28px rgba(79,61,51,.07);
+    }
+
+    footer {
+      position: relative;
+      padding: 40px 0 52px;
+      border-top: 1px solid var(--line);
+      color: #7c695f;
+      font-size: .86rem;
+    }
+
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .tiny-leaves {
+      letter-spacing: .18em;
+      color: var(--cider);
+    }
+
+    @media (max-width: 860px) {
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 72px;
+        left: 16px;
+        right: 16px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 12px;
+        border-radius: 18px;
+        background: #fffaf3;
+        border: 1px solid var(--line);
+        box-shadow: var(--shadow);
+      }
+
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 12px 10px; }
+      .menu-button { display: inline-block; }
+
+      .hero {
+        padding-top: 64px;
+      }
+
+      .hero-grid,
+      .book-feature,
+      .about-grid,
+      .series-strip,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .town-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .series-strip {
+        text-align: left;
+      }
+
+      .hero-card-wrap::before {
+        inset: 18px -8px -12px 18px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .container {
+        width: min(calc(100% - 22px), var(--max));
+      }
+
+      section {
+        padding: 62px 0;
+      }
+
+      .hero {
+        padding: 50px 0 60px;
+      }
+
+      h1 {
+        font-size: clamp(3rem, 16vw, 4.5rem);
+      }
+
+      .hero::after {
+        font-size: 4.5rem;
+        right: 2%;
+      }
+
+      .hero-card,
+      .newsletter,
+      .series-strip {
+        padding: 22px;
+        border-radius: 22px;
+      }
+
+      .book-mockup {
+        min-height: 370px;
+        padding: 24px;
+      }
+
+      .btn-row {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .ornament::before,
+      .ornament::after {
+        width: 38px;
+      }
+    }
+  </style>
 </head>
+
 <body>
-  <h1>Tessa Orchard</h1>
-  <p>Welcome to Whitebark Valley.</p>
-  <p>Official website of romance author Tessa Orchard.</p>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#home" aria-label="Tessa Orchard home">
+        <strong>Tessa Orchard</strong>
+        <span>Small-Town Romance</span>
+      </a>
+
+      <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+        <a href="#books">Books</a>
+        <a href="#whitebark">Whitebark Valley</a>
+        <a href="#about">About</a>
+        <a href="#newsletter">Newsletter</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <button class="menu-button" id="menuButton" aria-label="Open menu" aria-expanded="false">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Welcome to Whitebark Valley</p>
+          <h1>Romance lives here.</h1>
+          <div class="ornament">🍂</div>
+          <p class="lead">
+            Cozy streets, close-knit neighbors, changing seasons, and love stories
+            worth coming home to.
+          </p>
+
+          <div class="btn-row">
+            <a class="btn btn-primary" href="#books">Meet the first book</a>
+            <a class="btn btn-secondary" href="#whitebark">Explore Whitebark Valley</a>
+          </div>
+
+          <div class="hero-note">
+            <span>🍁</span>
+            Small-town romance with heart, warmth, and a little autumn magic.
+          </div>
+        </div>
+
+        <div class="hero-card-wrap">
+          <div class="hero-card" aria-label="Featured book">
+            <div class="book-mockup">
+              <div>
+                <small>Whitebark Valley Series · Book One</small>
+                <div class="title">Autumn in<br />Whitebark Valley</div>
+                <div class="author">Tessa Orchard</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="books">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Now entering Whitebark Valley</p>
+          <h2>Autumn in Whitebark Valley</h2>
+          <div class="ornament">✦ 🍁 ✦</div>
+          <p>
+            The first book in the Whitebark Valley Series — a cozy small-town romance
+            about Harper Bennett, the owner of The Hideaway bookstore, and Mason Sterling,
+            the newcomer whose arrival begins to change the rhythm of Whitebark Valley.
+          </p>
+        </div>
+
+        <div class="book-feature">
+          <div class="cover-slot">
+            <div class="cover-placeholder">
+              <span>Replace this panel with your final book cover image.</span>
+            </div>
+          </div>
+
+          <div>
+            <p class="eyebrow">Whitebark Valley Series · Book One</p>
+            <h3>A newcomer. A bookstore owner. A small town where love has a way of changing everything.</h3>
+
+            <p>
+              Harper Bennett has built a life for herself in Whitebark Valley, where she
+              owns The Hideaway, the town’s cozy bookstore. Then Mason Sterling comes to town.
+            </p>
+
+            <p>
+              As their paths begin to cross, Harper and Mason find themselves drawn into
+              something neither expected. Against the warmth of The Hideaway and the
+              close-knit rhythms of Whitebark Valley, an unexpected connection begins to grow.
+            </p>
+
+            <p>
+              <em>Autumn in Whitebark Valley</em> is a warm small-town romance filled with
+              autumn atmosphere, bookstore charm, community, and a love story at the heart
+              of Whitebark Valley.
+            </p>
+
+            <div class="tag-row" aria-label="Book themes">
+              <span class="tag">Small-town romance</span>
+              <span class="tag">Autumn atmosphere</span>
+              <span class="tag">Bookstore charm</span>
+              <span class="tag">Whitebark Valley</span>
+            </div>
+
+            <div class="btn-row">
+              <a class="btn btn-primary" href="#" aria-label="Amazon link coming soon">Amazon link coming soon</a>
+              <a class="btn btn-secondary" href="#newsletter">Join Tessa's reader list</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="town" id="whitebark">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">A place worth returning to</p>
+          <h2>Welcome to Whitebark Valley</h2>
+          <div class="ornament">🍂 🍁 🍂</div>
+          <p>
+            Whitebark Valley is more than a backdrop. It is a community of familiar
+            places, changing seasons, old friendships, new beginnings, and stories
+            that keep finding their way home.
+          </p>
+        </div>
+
+        <div class="town-grid">
+          <article class="place-card">
+            <div class="icon">📚</div>
+            <h3>The Hideaway</h3>
+            <p>
+              A cozy bookstore made for lingering, discovering a new favorite read,
+              and crossing paths with the person you did not expect.
+            </p>
+          </article>
+
+          <article class="place-card">
+            <div class="icon">🍁</div>
+            <h3>Small-Town Seasons</h3>
+            <p>
+              Crisp autumn sidewalks, warm windows, community traditions, and the
+              unmistakable feeling that everyone knows everyone.
+            </p>
+          </article>
+
+          <article class="place-card">
+            <div class="icon">☕</div>
+            <h3>Stories With Heart</h3>
+            <p>
+              Each Whitebark Valley romance brings a new couple into focus while the
+              town — and the people readers already love — remain close by.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="series-strip">
+          <div>
+            <p class="eyebrow">The Whitebark Valley Series</p>
+            <h2>Book One is only the beginning.</h2>
+            <p>
+              Follow the series as new love stories unfold across Whitebark Valley.
+              Future books, cover reveals, release news, and reader extras will live here.
+            </p>
+          </div>
+
+          <div class="btn-row">
+            <a class="btn btn-secondary" href="#newsletter">Stay in Whitebark Valley</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container about-grid">
+        <div>
+          <p class="eyebrow">About the author</p>
+          <h2>Meet Tessa Orchard</h2>
+          <div class="ornament">✦</div>
+          <p>
+            Tessa Orchard writes warm, heartfelt small-town romance filled with
+            community, connection, seasonal charm, and characters searching for a
+            place — and a person — that feels like home.
+          </p>
+          <p>
+            Her Whitebark Valley stories invite readers into cozy bookstores,
+            familiar streets, changing seasons, and romances that grow in the spaces
+            between everyday moments.
+          </p>
+          <p>
+            <em>Autumn in Whitebark Valley</em> is the first book in the Whitebark
+            Valley Series.
+          </p>
+        </div>
+
+        <div class="author-card">
+          <p>Author photo or a polished Tessa Orchard brand image can go here later.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="newsletter">
+      <div class="container">
+        <div class="newsletter">
+          <p class="eyebrow">Come home to Whitebark Valley</p>
+          <h2>Join Tessa's reader list</h2>
+          <div class="ornament" style="justify-content:center;">🍂</div>
+          <p>
+            Be the first to hear about new Whitebark Valley books, cover reveals,
+            release dates, reader extras, and more.
+          </p>
+          <div class="btn-row" style="justify-content:center;">
+            <a class="btn btn-primary" href="#contact">Newsletter signup coming soon</a>
+          </div>
+          <div class="newsletter-note">
+            We can connect this button to a free email-list service later.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Stay connected</p>
+          <h2>Contact Tessa</h2>
+          <div class="ornament">✦ 🍁 ✦</div>
+          <p>
+            Reader notes, book news, and social links can all live here as the Tessa
+            Orchard author platform grows.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-card">
+            <h3>Email</h3>
+            <p>
+              Add your public author email here once you decide which address you want readers to use.
+            </p>
+          </div>
+
+          <div class="contact-card">
+            <h3>Social</h3>
+            <p>
+              Add Instagram, Facebook, TikTok, Goodreads, or Amazon Author Central links here later.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-row">
+      <div>© <span id="year"></span> Tessa Orchard. All rights reserved.</div>
+      <div class="tiny-leaves">🍂 🍁 🍂</div>
+    </div>
+  </footer>
+
+  <script>
+    const menuButton = document.getElementById("menuButton");
+    const navLinks = document.getElementById("navLinks");
+
+    menuButton.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("open");
+      menuButton.setAttribute("aria-expanded", isOpen);
+      menuButton.textContent = isOpen ? "✕" : "☰";
+    });
+
+    navLinks.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+        menuButton.setAttribute("aria-expanded", "false");
+        menuButton.textContent = "☰";
+      });
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
+
