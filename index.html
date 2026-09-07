@@ -186,24 +186,18 @@
 
     .brand {
       display: inline-flex;
-      flex-direction: column;
+      align-items: center;
       line-height: 1;
+      flex: 0 1 430px;
+      min-width: 0;
     }
 
-    .brand strong {
-      font-family: "Playfair Display", Georgia, serif;
-      font-size: 1.5rem;
-      color: var(--brown);
-      letter-spacing: -.02em;
-    }
-
-    .brand span {
-      margin-top: 5px;
-      color: var(--rust);
-      font-size: .66rem;
-      font-weight: 800;
-      letter-spacing: .17em;
-      text-transform: uppercase;
+    .brand-logo {
+      display: block;
+      width: min(430px, 38vw);
+      height: 62px;
+      object-fit: contain;
+      object-position: left center;
     }
 
     .nav-links {
@@ -689,6 +683,9 @@
     }
 
     @media (max-width: 860px) {
+      .brand { flex-basis: 300px; }
+      .brand-logo { width: min(300px, 68vw); height: 56px; }
+
       .nav-links {
         display: none;
         position: absolute;
@@ -815,8 +812,7 @@
   <header>
     <div class="container nav">
       <a class="brand" href="#home" aria-label="Tessa Orchard home">
-        <strong>Tessa Orchard</strong>
-        <span>Small-Town Romance</span>
+        <img class="brand-logo" src="tessa-orchard-header-logo.png" alt="Tessa Orchard" />
       </a>
 
       <nav class="nav-links" id="navLinks" aria-label="Main navigation">
