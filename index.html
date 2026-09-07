@@ -321,6 +321,24 @@
       box-shadow: var(--shadow-lg);
     }
 
+
+    .real-cover {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 17px;
+      box-shadow: 0 18px 42px rgba(63, 40, 30, .22);
+    }
+
+    .hero-real-cover {
+      max-height: 560px;
+      width: auto;
+      max-width: 100%;
+      margin: 0 auto;
+      object-fit: contain;
+      border: 7px solid rgba(255,250,243,.96);
+    }
+
     .book-mockup {
       height: 100%;
       min-height: 446px;
@@ -730,7 +748,25 @@
         border-radius: 22px;
       }
 
-      .book-mockup {
+  
+    .real-cover {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 17px;
+      box-shadow: 0 18px 42px rgba(63, 40, 30, .22);
+    }
+
+    .hero-real-cover {
+      max-height: 560px;
+      width: auto;
+      max-width: 100%;
+      margin: 0 auto;
+      object-fit: contain;
+      border: 7px solid rgba(255,250,243,.96);
+    }
+
+    .book-mockup {
         min-height: 370px;
         padding: 24px;
       }
@@ -796,13 +832,9 @@
 
         <div class="hero-card-wrap">
           <div class="hero-card" aria-label="Featured book">
-            <div class="book-mockup">
-              <div>
-                <small>Whitebark Valley Series · Book One</small>
-                <div class="title">Autumn in<br />Whitebark Valley</div>
-                <div class="author">Tessa Orchard</div>
-              </div>
-            </div>
+            <img class="real-cover hero-real-cover"
+              src="autumn-in-whitebark-valley-cover.jpg"
+              alt="Cover of Autumn in Whitebark Valley by Tessa Orchard, Whitebark Valley Series Book One" />
           </div>
         </div>
       </div>
@@ -823,9 +855,9 @@
 
         <div class="book-feature">
           <div class="cover-slot">
-            <div class="cover-placeholder">
-              <span>Replace this panel with your final book cover image.</span>
-            </div>
+            <img class="real-cover"
+              src="autumn-in-whitebark-valley-cover.jpg"
+              alt="Cover of Autumn in Whitebark Valley by Tessa Orchard" />
           </div>
 
           <div>
